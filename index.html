@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3DS eShop — CIA & Hack ROMs</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="shell">
+
+    <!-- TOP BAR -->
+    <header class="top-bar">
+      <div class="logo">3DS<span>eShop</span></div>
+      <div class="top-icons">
+        <span class="battery">🔋 87%</span>
+        <span class="wifi-icon">📶</span>
+        <span class="time-label" id="clock">00:00</span>
+      </div>
+    </header>
+
+    <!-- NAV TABS -->
+    <nav class="nav-tabs">
+      <button class="tab active" data-tab="home">🏠 Início</button>
+      <button class="tab" data-tab="cia">📦 CIA</button>
+      <button class="tab" data-tab="hackrom">🔧 Hack ROMs</button>
+      <button class="tab" data-tab="dlc">🎁 DLC</button>
+      <button class="tab" data-tab="updates">🔄 Updates</button>
+      <button class="tab" data-tab="search">🔍 Buscar</button>
+    </nav>
+
+    <!-- SEARCH BAR -->
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Buscar jogos, ROMs, patches..." />
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="3ds">3DS</button>
+      <button class="filter-btn" data-filter="ds">DS</button>
+      <button class="filter-btn" data-filter="gba">GBA</button>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="content" id="mainContent">
+      <!-- injected by JS -->
+    </main>
+
+    <!-- BOTTOM BAR -->
+    <nav class="bottom-bar">
+      <button class="bottom-btn active" data-tab="home">
+        <span class="bb-icon">🏠</span>
+        <span class="bb-label">Início</span>
+      </button>
+      <button class="bottom-btn" data-tab="cia">
+        <span class="bb-icon">📦</span>
+        <span class="bb-label">CIA</span>
+      </button>
+      <button class="bottom-btn" data-tab="hackrom">
+        <span class="bb-icon">🔧</span>
+        <span class="bb-label">Hacks</span>
+      </button>
+      <button class="bottom-btn" data-tab="dlc">
+        <span class="bb-icon">🎁</span>
+        <span class="bb-label">DLC</span>
+      </button>
+    </nav>
+
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <h3 id="modalTitle">Título do Jogo</h3>
+      <p id="modalDesc">Descrição</p>
+      <div class="modal-meta" id="modalMeta"></div>
+      <div class="progress-bar" id="progressBar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <p class="progress-label" id="progressLabel">Baixando... 0%</p>
+      <div class="modal-btns">
+        <button onclick="closeModal()">Cancelar</button>
+        <button class="primary" id="modalDlBtn" onclick="startDownload()">⬇ Baixar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
